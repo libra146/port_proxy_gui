@@ -2,7 +2,10 @@
 # For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
 name: build Python Package
 
-on: push
+on:
+  push:
+    tags:
+      - v*
 
 jobs:
   deploy:
@@ -24,9 +27,16 @@ jobs:
         run: |
           pyinstaller -F -w --distpath . main.py
           dir
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          name: main
-          path: main.exe
-          retention-days: 3
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - 首次发布版本
+          draft: false
+          prerelease: false
