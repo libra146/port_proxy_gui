@@ -152,7 +152,7 @@ class QMain(QMainWindow):
         command = 'netsh interface portproxy show all'  # noqa
         stdout_data, stderr_data = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                                     stdin=subprocess.PIPE,
-                                                    shell=True).communicate()
+                                                    shell=False).communicate()
         stdout_data, stderr_data = stdout_data.decode('gbk'), stderr_data.decode('gbk')
         result = re.findall(get_ip_port, stdout_data)
         for a in result:
@@ -193,7 +193,7 @@ class QMain(QMainWindow):
         """
         command = 'sc query iphlpsvc'  # noqa
         stdout_data, stderr_data = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                                    stderr=subprocess.PIPE, shell=True).communicate()
+                                                    stderr=subprocess.PIPE, shell=False).communicate()
         stdout_data, stderr_data = stdout_data.decode('gbk'), stderr_data.decode('gbk')
         print(stdout_data, stderr_data)
         if stdout_data:
