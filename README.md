@@ -4,7 +4,7 @@
 
 port_proxy_gui 为 Windows 端口转发的 GUI 版本，为了解决每次需要用到 Windows 端口转发时需要敲很长的命令的问题。
 
-工具界面使用 Python 和 PySide2 编写，跨平台运行，但是由于所使用的端口转发命令仅限于 Windows，所以在其他平台运行没有意义。😂😂
+工具界面使用 Python 和 PySide2 编写，Python 版本为 3.8.6，可以跨平台运行，但是由于所使用的端口转发命令仅限于 Windows，所以在其他平台运行没有意义。😂😂
 
 工具所使用到的依赖为：
 
@@ -14,7 +14,7 @@ port_proxy_gui 为 Windows 端口转发的 GUI 版本，为了解决每次需要
 | netifaces   | 0.10.9 |
 | pyinstaller | 4.1    |
 
-工具主界面长这样：g
+工具主界面长这样：
 
 ![](img/main.png)
 
