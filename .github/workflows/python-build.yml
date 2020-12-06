@@ -38,7 +38,7 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             Changes in this Release
-            - 首次发布版本
+            - 修复闪黑窗口的问题
           draft: false
           prerelease: false
       - name: Upload Release Asset
