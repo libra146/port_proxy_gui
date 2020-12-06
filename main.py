@@ -114,7 +114,7 @@ class QMain(QMainWindow):
         """
         stdout_data, stderr_data = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                                     stdin=subprocess.PIPE,  # GUI程序中记得设置标准输入
-                                                    shell=False).communicate()
+                                                    shell=True).communicate()
         stdout_data = stdout_data.decode('gbk')
         stderr_data = stderr_data.decode('gbk')
         if stdout_data == '请求的操作需要提升(作为管理员运行)。\n\r\n':
@@ -152,7 +152,7 @@ class QMain(QMainWindow):
         command = 'netsh interface portproxy show all'  # noqa
         stdout_data, stderr_data = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                                     stdin=subprocess.PIPE,
-                                                    shell=False).communicate()
+                                                    shell=True).communicate()
         stdout_data, stderr_data = stdout_data.decode('gbk'), stderr_data.decode('gbk')
         result = re.findall(get_ip_port, stdout_data)
         for a in result:
@@ -193,7 +193,7 @@ class QMain(QMainWindow):
         """
         command = 'sc query iphlpsvc'  # noqa
         stdout_data, stderr_data = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                                    stderr=subprocess.PIPE, shell=False).communicate()
+                                                    stderr=subprocess.PIPE, shell=True).communicate()
         stdout_data, stderr_data = stdout_data.decode('gbk'), stderr_data.decode('gbk')
         print(stdout_data, stderr_data)
         if stdout_data:
