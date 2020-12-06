@@ -14,13 +14,13 @@ port_proxy_gui 为 Windows 端口转发的 GUI 版本，为了解决每次需要
 | netifaces   | 0.10.9 |
 | pyinstaller | 4.1    |
 
-工具主界面长这样：
+工具主界面长这样：g
 
 ![](img/main.png)
 
 ### 软件原理
 
-依赖于 Windows 的 IP Helper 服务，在启动时软件会自动检测服务状态， IP Helper 服务状态显示在标题上，如未开启对应服务，请自行开启。
+依赖于 Windows 的 IP Helper 服务，在启动时软件会自动检测服务状态， **IP Helper 服务状态显示在标题上**，如未开启对应服务，请自行开启。
 
 通过 `netsh interface portproxy` 命令设置和删除端口转发规则，`netsh interface portproxy` 命令要求使用管理员权限运行，所以本工具也要使用管理员权限运行。
 
@@ -32,8 +32,12 @@ port_proxy_gui 为 Windows 端口转发的 GUI 版本，为了解决每次需要
 
 ### 修改之前的端口转发规则
 
+首先双击需要修改的端口转发规则，然后再下方的文本框中修改对应的端口和地址，点击确定提交修改。
+
 ![](img/edit.gif)
 
 ### 删除端口转发规则
+
+在需要删除的端口转发规则上右键点击删除即可删除对应规则。
 
 ![](img/del.gif)
