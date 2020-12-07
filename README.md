@@ -1,5 +1,7 @@
 ## Windows端口转发命令的GUI版本
 
+![build Python Package](https://github.com/libra146/port_proxy_gui/workflows/build%20Python%20Package/badge.svg?branch=main)
+
 ### 简介
 
 port_proxy_gui 为 Windows 端口转发的 GUI 版本，为了解决每次需要用到 Windows 端口转发时需要敲很长的命令的问题。
