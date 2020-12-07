@@ -26,7 +26,20 @@ port_proxy_gui 为 Windows 端口转发的 GUI 版本，为了解决每次需要
 
 通过 `netsh interface portproxy` 命令设置和删除端口转发规则，`netsh interface portproxy` 命令要求使用管理员权限运行，所以本工具也要使用管理员权限运行。
 
-### 使用教程
+### 安装
+
+配置好 Python 环境，使用以下命令安装依赖（使用管理员权限运行）：
+
+`pip install -r requirements.txt`
+
+如果遇到编译错误则需要去 [https://www.lfd.uci.edu/~gohlke/pythonlibs/#netifaces](https://www.lfd.uci.edu/~gohlke/pythonlibs/#netifaces)
+根据自己的 Python 版本下载编译好的 whl 文件。
+
+全部依赖安装好后双击 build.bat 编译 exe 文件。
+
+结束。
+
+### 使用
 
 #### 添加新的端口转发规则
 
